@@ -13,3 +13,6 @@ Traceback (most recent call last):
     from fileutils.htk import *
 ImportError: No module named fileutils.htk
 ```
+* add preliminary run script `runYunitator.sh`
+* run script first needs to produce HTK format features using OpenSmile - use the same config as OpenSAT: `/vagrant/MED_2s_100ms_htk.conf`
+* add `extract-htk-vm2.sh` to do this
