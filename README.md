@@ -8,7 +8,7 @@ Debugging/TODO:
 
 ```
 vagrant@vagrant-ubuntu-trusty-64:~/Yunitator$ ~/anaconda/bin/python diarize.py 
-Traceback (most recent call last):
+Traceback (most recent call last): 
   File "diarize.py", line 2, in <module>
     from fileutils.htk import *
 ImportError: No module named fileutils.htk
