@@ -28,12 +28,13 @@ fi
 cd $BASEDIR
 
 # make output folder for features, below input folder
-mkdir -p $basename/feature
+mkdir -p $dirname/Yunitemp/
 
 # first features
 ./extract-htk-vm2.sh $1
 
+exit
 # then confidences
-python diarize.py $1
+python diarize.py $dirname/Yunitemp/$basename.htk
 
 

@@ -13,7 +13,7 @@ basename="${filename%.*}"
 FEATURE_NAME=med # arbitrary - just a name
 INPUT=$1
 CONFIG_FILE=/vagrant/MED_2s_100ms_htk.conf
-OUTPUT_DIR=$dirname/feature
+OUTPUT_DIR=$dirname/Yunitemp/
 OPENSMILE=~/openSMILE-2.1.0/bin/linux_x64_standalone_static/SMILExtract
 
 mkdir -p $OUTPUT_DIR
