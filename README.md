@@ -13,6 +13,10 @@ Traceback (most recent call last):
     from fileutils.htk import *
 ImportError: No module named fileutils.htk
 ```
+RESOLVED: use the same ~/G/coconut, in same way, adding it to system path in python code
+
 * add preliminary run script `runYunitator.sh`
 * run script first needs to produce HTK format features using OpenSmile - use the same config as OpenSAT: `/vagrant/MED_2s_100ms_htk.conf`
 * add `extract-htk-vm2.sh` to do this
+* Need to install also pytorch in the VM, with: `conda install pytorch-cpu torchvision -c pytorch`
+* this unfortunately also requires CUDA - but installing CUDA extremely bloats the VM with unnecessary packages (full Ubuntu desktop)
