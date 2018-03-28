@@ -1,4 +1,5 @@
 import sys, os, os.path
+sys.path.append(os.path.expanduser("~/G/coconut"))
 from fileutils.htk import *
 import torch
 import torch.nn as nn
@@ -9,7 +10,7 @@ import cPickle
 import numpy
 
 # Load model
-net = Net(50, 200, 4).cuda()
+net = Net(50, 200, 4) #.cuda()
 net.load_state_dict(torch.load('model.pt'))
 
 INPUT_FILE = sys.argv[1]        # Feature file containing 6,669-dim HTK-format features

@@ -33,7 +33,6 @@ mkdir -p $dirname/Yunitemp/
 # first features
 ./extract-htk-vm2.sh $1
 
-exit
 # then confidences
 python diarize.py $dirname/Yunitemp/$basename.htk
 
