@@ -11,7 +11,7 @@ import numpy
 
 # Load model
 net = Net(50, 200, 4) #.cuda()
-net.load_state_dict(torch.load('model.pt'))
+net.load_state_dict(torch.load('model.pt', map_location = lambda storage, loc: storage))
 
 INPUT_FILE = sys.argv[1]        # Feature file containing 6,669-dim HTK-format features
 OUTPUT_FILE = sys.argv[2]       # RTTM file to write the results to
@@ -24,7 +24,7 @@ pca = lambda feat: ((feat[:, mask] - mu) / sigma).dot(V) * w + b
 
 # Load input feature and predict
 feat = pca(readHtk(INPUT_FILE))
-input = Variable(torch.from_numpy(numpy.expand_dims(feat, 0).astype('float32'))).cuda()
+input = Variable(torch.from_numpy(numpy.expand_dims(feat, 0).astype('float32'))) #.cuda()
 input = pack_padded_sequence(input, [len(feat)], batch_first = True)
 output = net(input).data.data.cpu().numpy()
 

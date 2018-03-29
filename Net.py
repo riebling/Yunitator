@@ -20,4 +20,4 @@ class Net(nn.Module):
         # Returns log probabilities
         # Both input and output are PackedSequences
         x = self.gru(x)[0]
-        return PackedSequence(F.softmax(self.fc(x[0])), x[1])
+        return PackedSequence(F.softmax(self.fc(x[0]), dim = -1), x[1])
